@@ -36,11 +36,8 @@
             <tbody>
             <tr>
                 <th>Potatoes
-                </tr>
-                <tr>
-                <th>12 peeled</th>
-                </tr>
-            
+                <th>12 peeled
+            </tr>
             <tr>
                 <th>Butter
                 <th>4oz
@@ -142,3 +139,4 @@
     
     </body>
 </html>
+

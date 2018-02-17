@@ -38,7 +38,8 @@
                 <th>Potatoes
                 </tr>
                 <tr>
-                <th>12 peeled
+                <th>12 peeled</th>
+                </tr>
             
             <tr>
                 <th>Butter

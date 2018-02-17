@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                 <th>12 peeled
-            </tr>
+            
             <tr>
                 <th>Butter
                 <th>4oz

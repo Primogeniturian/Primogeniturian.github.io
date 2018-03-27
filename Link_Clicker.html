@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Word Guesser Starter Code</title>
+</head>
+<body>
+
+<div id="guess_display"></div>
+
+
+<form id="guess_form">
+    <label>Guess a letter:
+        <input type="text" id="guess_input">
+    </label>
+</form>
+
+<div id="guess_status"></div>
+
+<script>
+    // Store DOM elements in variables
+    var guessForm = document.getElementById("guess_form");
+    var guessDisplay = document.getElementById("guess_display");
+    var guessInput = document.getElementById("guess_input");
+    var guessStatus = document.getElementById("guess_status");
+
+    // Initialize game state variables
+    var secretWord = "banana";
+    var guessedWord = [];
+    var guessedLetters = [];
+    for (var i = 0; i < secretWord.length; i++) {
+        guessedWord[i] = "_";
+    }
+
+    // Returns true if its a correct guess -
+    //  if the letter is anywhere in the word
+    // Also updates guessedWord and guessedLetters
+    var checkLetterGuess = function(letter) {
+        var x = false
+
+        for (var n = 0; n < secretWord.length; n++) {
+            if (letter===secretWord[n]) {
+                guessedWord[n]=secretWord[n]
+                x=true}
+
+
+
+        }return x
+    }
+
+

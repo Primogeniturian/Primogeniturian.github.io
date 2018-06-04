@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Seater</title>
+</head>
+<style>
+    #seats{
+        display: inline-flex;
+
+
+    }
+.seat{
+    width:100px;
+    height:50px;
+    background-color: #C5EDAC;
+
+    flex:1;
+    margin-right:15px;
+    margin-bottom:15px;
+}
+body {
+    display: block;
+    margin-left:auto ;
+    margin-right:auto;
+    width: 50%;
+    background-color: #93B1A7;
+}
+    button{
+        background-color: #10973a;
+        color: #51c055;
+    }
+</style>
+
+<body>
+<h1>Step 1:</h1>
+<h3> Enter room size(# of seats)</h3>
+<form id ="seat-form">
+
+Size of graph(x)<input type="number" id="sizeinputx">
+Size of graph(y)<input type="number" id="sizeinputy"><br>
+<button value="Submit">Submit</button>
+</form>
+<h1>Step 2:</h1>
+<form id = "nam3r">
+    Enter Student Name:<input type="text" id="name">
+    <button value="submit">Submit Name</button>
+    <div id ="Student_Name_List"></div>
+</form>
+<form id = "compiled">
+    <button value="submit">Finish & Randomize</button>
+    <div id = "listOfStudents">
+
+    </div>
+</form>
+<form id = "reset">
+    <button value="submit">Reset Page</button>
+
+</form>
+<div id="seats">
+
+</div>
+
+
+<script>
+    function shuffle(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+    }
+    var z = 0;
+    var divHolder = [];
+    var seatForm = document.getElementById("seat-form");
+    seatForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        var row = document.getElementById("sizeinputx").value;
+        row = parseInt(row,10);
+        var col = document.getElementById("sizeinputy").value;
+        col = parseInt(col,10);
+        console.log("test");
+
+    for(var i=0;i<row;i++){
+        var seatsContainer = document.getElementById("seats")
+            var seatsRow = document.createElement("div");
+            seatsContainer.appendChild(seatsRow);
+        for(var j = 0;j<col;j++){
+                z=z+1;
+            console.log("test");
+            var seat = document.createElement("div");
+            seat.className="seat";
+
+            seatsRow.appendChild(seat);
+                seat.id = z;
+                console.log(seat)
+            divHolder.push(seat)
+
+
+    }}});
+    var namesPlacement = [];
+    var nameForm = document.getElementById("nam3r");
+
+    nameForm.addEventListener("submit", function(event){
+        event.preventDefault();
+
+        var currentName = document.getElementById("name").value;
+            namesPlacement.push(currentName);
+            console.log(namesPlacement)
+        var currentList = document.getElementById("listOfStudents")
+        currentList.innerHTML=namesPlacement
+    })
+    var compilliator3000 = document.getElementById("compiled")
+    compilliator3000.addEventListener("submit", function(event){
+        event.preventDefault()
+        var shuffledList=shuffle(divHolder)
+        for(var r = 0;r<namesPlacement.length;r++){
+            shuffledList[r].innerHTML=namesPlacement[r]
+
+        }
+    })
+    var pageReset = document.getElementById("reset")
+    pageReset.addEventListener("submit",function(event){
+    event.preventDefault()
+        location.reload();
+
+
+    })
+
+</script>
+</body>
+</html>
+
